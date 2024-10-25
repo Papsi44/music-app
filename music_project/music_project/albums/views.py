@@ -38,8 +38,11 @@ def album_edit(request, id):
         if form.is_valid():
             form.save()
             return redirect('home')
+    context = {
+        'form': form,
+    }
 
-    return render(request,'albums/album-edit.html', context)
+    return render(request,'albums/album-edit.html',context)
 
 
 def album_delete(request, id):
