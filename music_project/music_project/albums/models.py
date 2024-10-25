@@ -2,7 +2,6 @@ from django.core.validators import MinValueValidator
 from django.db import models
 
 from music_project.albums.choices import GenreChoices
-from music_project.profiles.models import Profile
 
 
 class Album(models.Model):
@@ -11,7 +10,7 @@ class Album(models.Model):
         unique=True,
     )
 
-    artist = models.CharField(max_length=30),
+    artist = models.CharField(max_length=30)
 
     genre = models.CharField(
         max_length=30,

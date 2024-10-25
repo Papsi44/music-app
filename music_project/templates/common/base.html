@@ -14,13 +14,15 @@
     <!-- Navigation Bar -->
     <header>
         <nav>
-            <img src="{% static "images/headphones.png"%} alt="headphones"/>
+            <img src="{% static "images/headphones.png"%}" alt="headphones"/>
             <a href="#">Home</a>
             <ul></ul>
             <ul>
                 <!--Only for user with created profile-->
-                <li><a href="#">Create Album</a></li>
-                <li><a href="#">Profile</a></li>
+                {% if user %}
+                    <li><a href="{% url 'album-add' %}">Create Album</a></li>
+                    <li><a href="#">Profile</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>
